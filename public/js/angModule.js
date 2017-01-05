@@ -1,0 +1,1 @@
+var mainModule = angular.module("Cascade", ["ngRoute", "module.auth", "module.dashboard"]);

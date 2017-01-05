@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html ng-app="module.auth">
+    <head>
+        <title>Login</title>
+<!--meta tags-->
+        <meta charset="utf-24">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<!--Libraries-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script> 
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!--Page Links-->
+        <script src="/js/authentication/module.auth.js"></script>
+        <script src="/js/authentication/module.dash.js"></script>
+        <script src="/js/angModule.js"></script>
+        <script src="/js/beerController.js"></script>
+        <script src="/js/angRouter.js"></script>
+       
+       <link rel="stylesheet" type="text/css" href="/css/main.css">
+       <link rel="stylesheet" type="text/css" href="/css/register.css">
+    </head>
+<!--body and angular controller-->
+    <body ng-controller="module.auth.controller as auth"> 
+
+<!--Nav-bar-->
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand glyphicon glyphicon-grain navbar-center" href="/">Cascade</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href='/'>Home</a></li>
+                        <li><a href="#/about">About</a></li>
+                    </ul>
+<!-- Right side of Nav bar with Login $ checkout -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/register"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+                        </nav>
+                    </div>  
+<!--Registration/Login Forms-->
+        <form ng-submit="auth.login.submit($event)">
+            <h1>Login!</h1>
+            <br>
+            <fieldset>
+                <label>Email:</label><br>
+                <input required placeholder="Email" type="email" ng-model="auth.payloads.login.email"/>
+            </fieldset><br>
+            <fieldset>
+                <label for="password">Password:</label><br>
+                <input required placeholder="Password" type="password" ng-model="auth.payloads.login.password"/>
+            </fieldset><br>
+            <button type="submit"class="btn btn-lg btn-inverse">Login</button>
+            <p ng-class="auth.login.alert">{{ auth.login.message }}</p>
+        </form>
+        <form ng-submit="auth.register.submit($event)">
+            <h1>Register!</h1>
+            <fieldset>
+                <label>Email:</label><br>
+                <input required placeholder="Email" type="text" ng-model="auth.payloads.register.email"/>
+            </fieldset><br>
+            <fieldset>
+                <label for="password">Password:</label><br>
+                <input required placeholder="Create a password" type="password" ng-model="auth.payloads.register.password"/>
+            </fieldset><br>
+            <button type="submit" class="btn btn-lg btn-inverse">Register</button>
+            <p ng-class="auth.register.alert">{{ auth.register.message }}</p>
+        </form>
+<!--footer  -->
+<br><br>
+        <div id="footer">
+            <footer class="container-fluid text-center">
+        <p>Thirsty is an app designed by beer nerds for beer nerds using <a href="http://www.brewerydb.com/">BreweryDB API</a></p>
+      </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+h1,label {
+    color: white;
+}
+input {
+    color:black;
+}
+h1 {
+    text-align: center;
+}
+form {
+    margin: auto;
+    padding-left: 10%;
+
+}
+form.button {
+    margin: auto;
+    width: 50%;
+}

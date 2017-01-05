@@ -1,0 +1,99 @@
+body {
+  background-image: url(http://twelve3south.com/wp-content/uploads/2014/01/wood-background2.jpg);
+}
+
+#wrapper {
+	min-height:100%;
+	position:relative;
+}
+#header {
+	background:#ededed;
+	padding:10px;
+}    
+.navbar {
+ 
+  margin-bottom: 0px;
+  border-radius: 0;
+}
+body > ng-view > div {
+  color: black;
+}
+#content {
+	padding-bottom:50%; /* Height of the footer element */
+  color: white;
+}
+div.container-fluid.ng-scope{
+  color:white;
+}
+
+#searchBar {
+  margin: auto;
+  width: 90%;
+}
+/*Panel CSS*/
+#beerPanel{
+  padding: 0% 5% 0% 5%;
+  color:black;
+
+}
+#beerPanel > div > div.panel-body > img {
+  padding: 0% 9% 0% 9%;
+}
+div.panel-body {
+    background-color:#222222;
+  }
+div.panel-heading {
+    background-color:#9d9d9d;
+  }
+div.panel-heading.ng-binding {
+    background-color:#9d9d9d; 
+  }
+#addButton {
+  float:right;
+}
+.btn-circle {
+  float: right;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 5px 5px 5px 5px;
+  font-size: 12px;
+  border-radius: 15px;
+  padding-bottom: 10px;
+}
+div.panel-heading {
+    background-color:#9d9d9d; 
+  }
+div.panel-footer.ng-binding {
+    background-color:#9d9d9d;
+  }
+div.panel-footer {
+    background-color:#9d9d9d;
+  }
+
+#btnSub {
+  display: block;
+  margin: auto;
+}
+
+#hop {
+ padding-left: 40%;
+ padding-right:40%;
+}
+ /* Add a gray background color and some padding to the footer */
+
+#footer {
+  text-align: center;
+  color: #9d9d9d;
+	background-color:#222222 ;
+	width:100%;
+	height:60px;
+	position:static;
+	bottom:0;
+	left:0;
+  right:0;
+  clear: bottom;
+}
+.beerList{
+  font-size: 18px;
+}

@@ -1,0 +1,22 @@
+  <div class="container-fluid" id="beerPanel" ng-model="beer.beerData">
+    <div class="panel panel-default" class="button">
+		
+
+       	<div class="panel-heading">
+          {{ beer.beerData.name }} 
+          <button type="button" class="btn btn-success btn-circle glyphicon glyphicon-plus"></button></div>
+        
+
+        <div class="panel-body" ng-click="beerDesc= !beerDesc">
+        	<div class="well" ng-show="beerDesc">{{beer.beerData.description}}
+        	<a href="#/beerDesc/{{beer.beerData.breweries[0].nameShortDisplay}}/{{beer.beerData.name}}" type="link">Further Information</a></div>
+
+        	<img ng-src="{{ beer.beerData.labels.medium}}" 
+        	ng-hide="beerDesc" >
+        </div>
+
+        <div class="panel-footer">
+        {{ beer.beerData.breweries[0].name }}   abv: {{beer.beerData.abv}}%</div>
+      
+      </div>
+  </div>

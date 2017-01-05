@@ -1,0 +1,14 @@
+
+<div class="container-fluid" id="breweryPanels" ng-model="beer.beerName.breweries[0].id">
+  <h1><img ng-src="{{beer.beerData.breweries[0].images.icon}}">{{beer.beerData.breweries[0].name}} Beer List:</h1>
+        <ul>
+           <ul>
+              <li class="beerList" ng-repeat="oneBeer in beer.brewerData" ng-model="beer.beerBrewerData[oneBeer.name]">
+                <a type="link" href="#/beerPanel2/{{ oneBeer.name}}" ng-click="beer.searchList(oneBeer)">
+                  <font color="white">{{oneBeer.name}}</font>
+                </a>
+              </li>
+           </ul>
+        </ul>
+</div>
+

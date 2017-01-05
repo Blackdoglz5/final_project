@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Cascade">
+<head>
+  <title>Cascade</title>
+
+  <!-- script sources -->
+    <meta charset="utf-24">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Angular -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+  <!-- Angular Router -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+
+  <!-- page links -->
+  <script src="/js/authentication/module.auth.js"></script>
+    <script src="/js/authentication/module.dash.js"></script>
+    <script src="/js/angModule.js"></script>
+    <script src="/js/beerController.js"></script>
+    <script src="/js/angRouter.js"></script>
+  
+  <!--style sheets-->
+    <link rel="stylesheet" type="text/html" href="/html/home.html">
+    <link rel="stylesheet" type="text/html" href="/html/beerDesc.html"> 
+    <link rel="stylesheet" type="text/html" href="/html/about.html">
+    <link rel="stylesheet" type="text/html" href="/html/register.html">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" type="text/html" href="/html/beerPanel.html">
+    <link rel="stylesheet" type="text/html" href="/html/dashboard.html">
+</head>
+
+<body ng-controller="beerController as beer">
+  <div id="wrapper">
+    <div id=" header">
+
+<!-- Navbar -->
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand glyphicon glyphicon-grain navbar-center" href="#/">Cascade</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href='#/'>Home</a></li>
+        <li><a href="#/about">About</a></li>
+      </ul>
+<!-- Right side of Nav bar with Login $ checkout -->
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/register"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+        </nav>
+    </div>
+<!-- Router Pages *home* *about* *stores* *list of products*  -->
+  <div id="content">
+    <br><br>
+      <ng-view>
+
+      </ng-view>
+  </div>
+<!-- Footer -->
+    <div id="footer">
+      <footer class="container-fluid text-center">
+        <p>Thirsty is an app designed by a beer nerd for beer nerds using <a href="http://www.brewerydb.com/">BreweryDB API</a></p>
+      </footer>
+    </div>
+</body>
+</html>
