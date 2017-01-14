@@ -4,7 +4,7 @@
         <ul>
            <ul>
               <li class="beerList" ng-repeat="oneBeer in beer.brewerData" ng-model="beer.beerBrewerData[oneBeer.name]">
-                <a type="link" href="#/beerPanel2/{{ oneBeer.name}}" ng-click="beer.searchList(oneBeer)">
+                <a type="link" href="#/beerPanel2/{{oneBeer.breweries[0].nameShortDisplay}}/{{ oneBeer.name}}" ng-click="beer.searchList(oneBeer)">
                   <font color="white">{{oneBeer.name}}</font>
                 </a>
               </li>

@@ -14,7 +14,7 @@
         	<div class="well" ng-show="beerDesc">{{beer.description}}
         	<a href="#/beerDesc/{{beer[$index].name}}" type="link">Further Information</a></div>
 
-        	<img ng-src="{{ beer.labels.medium }}"
+        	<img ng-src="{{ beer.labels.medium || beer.breweries[0].images.squareMedium || beer.images.squareMedium}}"
         	ng-hide="beerDesc" >
         </div>
 
@@ -39,12 +39,12 @@
         	<div class="well" ng-show="beerDesc">{{beer.beerData.description}}
         	<a href="#/beerDesc/{{beer.beerData.breweries[0].nameShortDisplay}}/{{beer.beerData.name}}" type="link">Further Information</a></div>
 
-        	<img ng-src="{{ beer.beerData.labels.medium}}" 
+        	<img ng-src="{{ beer.beerData.labels.medium || beer.beerData.breweries[0].images.squareMedium}}" 
         	ng-hide="beerDesc" >
         </div>
 
         <div class="panel-footer">
-        {{ beer.beerData.breweries[0].name }}   abv: {{beer.beerData.abv}}%</div>
+        {{ beer.beerData.breweries[0].name ||  beer.beerData.locations[0].locality}}   abv: {{ beer.beerData.abv || beer.beerData.locations[0].region}}%</div>
       
       </div>
   </div>

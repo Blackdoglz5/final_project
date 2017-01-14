@@ -4,9 +4,9 @@ const config = require('./package');
  const bodyParser = require('body-parser');
  const mongoose = require('mongoose');
  const Routes = require('./routes/routes.js');
- var request = require('request');
+ const request = require('request');
  const colors = require('colors');
-//  const secrets = require ('secrets.json');
+ const secrets = require('./secrets');
  const app = express();
  
  
@@ -64,27 +64,34 @@ const config = require('./package');
  Routes(app);
  
  //********************* API requests ******************
+ app.get('/api/search', function(req,res){
+     console.log(req.query);
+     request("http://api.brewerydb.com/v2/search?q="+ req.query.q + "&key=" + secrets + "&withBreweries=y&withLocations=y&withAlternateNames=y&withIngredients=y&type=beer", function(err, response, body) {
+         res.send(body); // send the body (beer data) to the client
+     });
+ });
+
  app.get('/api/beers', function(req,res){
      console.log(req.query);
-     request("http://api.brewerydb.com/v2/beers?key=dada1aa94d3bfdbbd1c2e6efd9a6f2c7&withBreweries=y&withIngredients=y&name=" + req.query.name, function(err, response, body) {
+     request("http://api.brewerydb.com/v2/beers?key="+ secrets + "&withBreweries=y&withIngredients=y&name=" + req.query.name, function(err, response, body) {
          res.send(body); // send the body (beer data) to the client
      });
  });
  app.get('/api/brewery/:breweryId/beers', function(req,res){
      console.log(req.query);
-     request("http://api.brewerydb.com/v2/brewery/" + req.params.breweryId + "/beers?key=dada1aa94d3bfdbbd1c2e6efd9a6f2c7", function(err, response, body) {
+     request("http://api.brewerydb.com/v2/brewery/" + req.params.breweryId + "/beers?key=" + secrets + "&withBreweries=y&withIngredients=y", function(err, response, body) {
          res.send(body); // send the body (beer data) to the client
      });
  });
  app.get('/api/breweries', function(req,res){
      console.log(req.query);
-     request("http://api.brewerydb.com/v2/breweries?key=dada1aa94d3bfdbbd1c2e6efd9a6f2c7&name=" + req.query.name, function(err, response, body){
+     request("http://api.brewerydb.com/v2/breweries?key="+ secrets + "&name=" + req.query.name, function(err, response, body){
          res.send(body);
      });
  });
  //****************** Check Server Connection **************************
  app.listen(PORT, (error)=>{
-     if(error) {
+     if(error) {s
          console.log("Error starting server!");
      } else {
          console.log("Server started on port: ", PORT);

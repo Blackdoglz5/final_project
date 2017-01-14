@@ -11,7 +11,7 @@ function Router($routeProvider) {
 	 		templateUrl:'/html/home.html'})
         .when('/beerPanel/:brewery/:beer', {
             templateUrl:'/html/beerPanel.html'})
-		.when('/beerPanel2/:beer', {
+		.when('/beerPanel2/:brewery/:beer', {
             templateUrl:'/html/beerPanel2.html'})
         .when('/about', {
         	templateUrl:'/html/about.html'})

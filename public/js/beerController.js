@@ -13,17 +13,13 @@ mainModule
 		
 		
 // searches for beer name from search bar
-	beer.search = function () {
-		$http.get('/api/beers?name='+ beer.beerName )
+beer.search = function () {
+		$http.get('/api/search?q='+ beer.beerName )
 			.then(function successCallback(success) {
 				if(success.data.data) {
                 beer.beerData = success.data.data[0];
 				console.log(beer.beerData);
-// search for breweries if beer search does not return a value
-				// } else if (success.data.data === 0) {
-				// console.log("Beer not found,searching breweries.");
-				// beer.searchBreweries()
-				} else {function errorCallback(err) {
+					} else {function errorCallback(err) {
 				console.log("ERROR ERROR ERROR!!!", err)
 				};
 			}	

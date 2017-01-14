@@ -10,10 +10,10 @@
 		<br><br><br><br>
 	</div>
 	 	<form id="searchBar" >
-           <input ng-model="beer.beerName" class="form-control" placeholder="Search for a beer!" type="text">
+           <input ng-model="beer.beerName" class="form-control input-lg" placeholder="Search for a beer!" type="text">
 
-		  		<br><br><br><br>
-       	   		<button id="btnSub" class="btn btn-default" ng-click="beer.search()"><a ng-href="#/beerPanel/{{beer.beerData.breweries[0].nameShortDisplay}}/{{ beer.beerData.name }}"> Find Beer! </a></button>
+		  		<br><br><br>
+       	   		<button id="btnSub" class="btn-default btn-lg" ng-click="beer.search()"><a ng-href="#/beerPanel/{{beer.beerData.breweries[0].nameShortDisplay}}/ {{beer.beerData.name}}/"> Find Beer! </a></button>
 			
     	</form>
 		
