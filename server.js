@@ -7,6 +7,7 @@ const config = require('./package');
  const request = require('request');
  const colors = require('colors');
  const secrets = require('./secrets');
+const cookie_secrets = require('./cookie_secrets');
  const app = express();
  
  
@@ -27,7 +28,7 @@ const config = require('./package');
  //****************** Client Sessions ****************
  var sessions = require('client-sessions')({
     cookieName: config.name,
-    secret: 'DR@G0N$',
+    secret: cookie_secrets,
     requestKey: 'session',
     duration: (86400 * 1000) * 7,
      cookie: {
@@ -73,7 +74,7 @@ const config = require('./package');
 
  app.get('/api/beers', function(req,res){
      console.log(req.query);
-     request("http://api.brewerydb.com/v2/beers?key="+ secrets + "&withBreweries=y&withIngredients=y&name=" + req.query.name, function(err, response, body) {
+     request("http://api.brewerydb.com/v2/search?key="+ secrets + "&withBreweries=y&withLocations=y&withAlternateNames=y&withIngredients=y&type=beer" + req.query.q, function(err, response, body) {
          res.send(body); // send the body (beer data) to the client
      });
  });
