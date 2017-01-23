@@ -1,4 +1,4 @@
-const config = require('./package');
+ const config = require('./package');
  const express = require('express');
  const logger = require('morgan');
  const bodyParser = require('body-parser');
@@ -6,8 +6,8 @@ const config = require('./package');
  const Routes = require('./routes/routes.js');
  const request = require('request');
  const colors = require('colors');
- const secrets = require('./secrets');
-const cookie_secrets = require('./cookie_secrets');
+//  const secrets = require('./secrets');
+//  const cookie_secrets = require('./cookie_secrets');
  const app = express();
  
  
