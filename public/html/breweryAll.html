@@ -1,6 +1,10 @@
 
+<link rel="stylesheet" type="text/css" href="/css/breweryAll.css">
+
 <div class="container-fluid" id="breweryPanels" ng-model="beer.beerName.breweries[0].id">
-  <h1><img ng-src="{{beer.beerData.breweries[0].images.icon}}">{{beer.beerData.breweries[0].name}} Beer List:</h1>
+  <div id="woodStain">
+  <img ng-src="{{beer.beerData.breweries[0].images.squareMedium}}"><br>
+  <h1>{{beer.beerData.breweries[0].name}} Beer List:</h1>
         <ul>
            <ul>
               <li class="beerList" ng-repeat="oneBeer in beer.brewerData" ng-model="beer.beerBrewerData[oneBeer.name]">
@@ -10,5 +14,6 @@
               </li>
            </ul>
         </ul>
+</div>
 </div>
 

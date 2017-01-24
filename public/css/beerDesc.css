@@ -1,0 +1,19 @@
+img {
+    display: block;
+    margin: auto;
+    background-color: white;
+    border-left:30px solid white;
+    border-right:30px solid white;
+    border-radius: 10px;
+    box-shadow: 7px 8px 15px 0px #888888;
+}
+
+h2, h4, h5 {
+    text-align: center;
+}
+div#woodStain {
+    font-weight: bold;
+    color:white;
+    background-color: rgba(180, 110, 34, 0.55); 
+    border-radius: 10px;
+}

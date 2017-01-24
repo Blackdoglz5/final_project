@@ -30,6 +30,7 @@
     <link rel="stylesheet" type="text/html" href="/html/about.html">
     <link rel="stylesheet" type="text/html" href="/html/register.html">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <!--<link rel="stylesheet" type="text/css" href="/css/beerDesc.css">-->
     <link rel="stylesheet" type="text/html" href="/html/beerPanel.html">
     <link rel="stylesheet" type="text/html" href="/html/dashboard.html">
 </head>
@@ -39,7 +40,7 @@
     <div id=" header">
 
 <!-- Navbar -->
-  <nav class="navbar navbar-inverse">
+  <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -47,19 +48,23 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand glyphicon glyphicon-grain navbar-center" href="#/">Cascade</a>
+      <a class="navbar-brand glyphicon glyphicon-grain navbar-center" href="#/">Fuggle</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href='#/'>Home</a></li>
         <li><a href="#/about">About</a></li>
       </ul>
+    
 <!-- Right side of Nav bar with Login $ checkout -->
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/register"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
+      </div>
+       </div>
         </nav>
-    </div>
+    
+ 
 <!-- Router Pages *home* *about* *stores* *list of products*  -->
   <div id="content">
     <br><br>
@@ -68,10 +73,10 @@
       </ng-view>
   </div>
 <!-- Footer -->
-    <div id="footer">
-      <footer class="container-fluid text-center">
+    
+      <footer class="container-fluid" id="footer">     
         <p>Thirsty is an app designed by a beer nerd for beer nerds using <a href="http://www.brewerydb.com/">BreweryDB API</a></p>
       </footer>
-    </div>
+   
 </body>
 </html>

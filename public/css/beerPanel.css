@@ -1,0 +1,44 @@
+/*******************************************Panel CSS*****************************************/
+#beerPanel{
+  padding: 0% 5% 0% 5%;
+  color:black;
+
+}
+
+div.panel-body {
+    background-color:#222222;
+  }
+img {
+  padding: 5% 5% 5% 5%;
+  display: block;
+  margin: auto;
+  background-color: white;
+  border-radius:5px; 
+  
+}
+div.panel-heading {
+    background-color:#9d9d9d;
+  }
+div.panel-heading.ng-binding {
+    background-color:#9d9d9d; 
+  }
+#addButton {
+  float:right;
+}
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 5px 5px 5px 5px;
+  font-size: 12px;
+  border-radius: 15px;
+}
+div.panel-heading {
+    background-color:#9d9d9d; 
+  }
+div.panel-footer.ng-binding {
+    background-color:#9d9d9d;
+  }
+div.panel-footer {
+    background-color:#9d9d9d;
+  }

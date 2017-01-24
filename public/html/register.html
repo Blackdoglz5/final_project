@@ -17,17 +17,18 @@
         <script src="/js/angModule.js"></script>
         <script src="/js/beerController.js"></script>
         <script src="/js/angRouter.js"></script>
-       
+        
+        <link rel="shortcut icon" href="/html/beer_favicon.ico" />
        <link rel="stylesheet" type="text/css" href="/css/main.css">
        <link rel="stylesheet" type="text/css" href="/css/register.css">
     </head>
 <!--body and angular controller-->
     <body ng-controller="module.auth.controller as auth"> 
-
+        <div class="container-fluid text-center">
 <!--Nav-bar-->
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
-                <div class="navbar-header">
+                     <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -44,8 +45,10 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/register"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                     </ul>
-                        </nav>
-                    </div>  
+                    </div>
+                </div>
+            </nav>
+                     
 <!--Registration/Login Forms-->
         <form ng-submit="auth.login.submit($event)">
             <h1>Login!</h1>
@@ -74,6 +77,7 @@
             <button type="submit" class="btn btn-lg btn-inverse">Register</button>
             <p ng-class="auth.register.alert">{{ auth.register.message }}</p>
         </form>
+        </div>
 <!--footer  -->
 <br><br>
         <div id="footer">

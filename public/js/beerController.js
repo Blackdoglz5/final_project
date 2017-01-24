@@ -26,12 +26,11 @@ beer.search = function () {
 			})},
 // searches beer from list of all beers from brewery
 	beer.searchList = function (oneBeer) {
-		console.log('search list function', oneBeer);
 		$http.get('/api/search?q='+ oneBeer.breweries[0].name +' '+ oneBeer.name)
 			.then(function successCallback(success) {
 				if(success.data.data) {
                 beer.beerData = success.data.data[0];
-				console.log("Found Beer!" + beer.beerData);
+				console.log(beer.beerData);
 				} else {function errorCallback(err) {
 				console.log("ERROR ERROR ERROR!!!", err)
 				};

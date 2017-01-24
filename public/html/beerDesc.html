@@ -1,10 +1,13 @@
 
-
+<link rel="stylesheet" type="text/css" href="/css/beerDesc.css">
 <div id="information" class="container-fluid" ng-model="beer.beerData"> 
 
-		<img ng-src="{{ beer.beerData.labels.icon }}"><h2>{{ beer.beerData.name}}</h2>
+		
+<div id="woodStain"><br>
+	<img ng-src="{{ beer.beerData.labels.medium || beer.beerData.breweries[0].images.squareMedium}}">
+		<h2>{{ beer.beerData.name}}</h2>
 		<h4> {{ beer.beerData.breweries[0].name }} - {{ beer.beerData.breweries[0].locations[0].region }}</h4>
-		<h5> <a ng-href="{{ beer.beerData.breweries[0].locations[0].website }}" type="link"> {{ beer.beerData.breweries[0].locations[0].website }}</a>
+		<h5> <a ng-href="{{ beer.beerData.breweries[0].locations[0].website || beer.beerData.breweries[0].website}}" type="link"> {{ beer.beerData.breweries[0].locations[0].website }}</a>
 		</h5><br>
 	
 	<ul>
@@ -19,19 +22,22 @@
 		<li>Food Pairings: {{beer.beerData.foodPairings}}</li><br>
 		<li>Hops:</li><br>
 			<ul>
-				<li ng-repeat="hop in beer.beerData.ingredients.hops" class="button" ng-click="hopDesc= !hopDesc">{{hop.name}}<div class="well" ng-show="hopDesc">
+				<li ng-repeat="hop in beer.beerData.ingredients.hops" class="button" ng-click="hopDesc= !hopDesc">{{hop.name}}
+					<div class="well" ng-show="hopDesc">
 					<font color="black">{{hop.description}}</font></div></li>
 			</ul><br>
 
 		<li>Malts:</li><br>
 			<ul>
-				<li ng-repeat="malt in beer.beerData.ingredients.malt" class="button" ng-click="maltDesc= !maltDesc">{{malt.name}}<div class="well" ng-show="maltDesc" ng-repeat="characteristic in malt.characteristics">
-					<font color="black">{{characteristic.description}}  {{malt.description}}</font></li>
+				<li ng-repeat="malt in beer.beerData.ingredients.malt" class="button" ng-click="maltDesc= !maltDesc">{{malt.name}}
+					<div class="well" ng-show="maltDesc">
+					<font color="black">{{characteristic.description}}  {{malt.description}}</font></div></li>
 			</ul><br>
 	</ul>
+</div>
 	<br>
 	<form ng-submit="beer.searchBrewery()">
-		<h4 ng-model="beer.beerName.breweries[0].id" ><a href="#/breweryAll/{{beer.beerData.breweries[0].nameShortDisplay}}" type="link" ng-click="beer.searchBrewery()">More beers from this brewery</a></h4>
+		<h4 ng-model="beer.beerName.breweries[0].id" class="btn-default btn-lg"><a href="#/breweryAll/{{beer.beerData.breweries[0].nameShortDisplay}}" type="button" ng-click="beer.searchBrewery()">More beers from this brewery</a></h4>
 	</form>
 </div>
 	

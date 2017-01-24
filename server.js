@@ -6,8 +6,8 @@
  const Routes = require('./routes/routes.js');
  const request = require('request');
  const colors = require('colors');
-//  const secrets = require('./secrets');
-//  const cookie_secrets = require('./cookie_secrets');
+ const secrets = require('./secrets');
+ const cookie_secrets = require('./cookie_secrets');
  const app = express();
  
  
@@ -31,7 +31,7 @@
     secret: cookie_secrets,
     requestKey: 'session',
     duration: (86400 * 1000) * 7,
-     cookie: {
+    cookie: {
             ephemeral: false,
             httpOnly: true,
             secure: false
@@ -72,15 +72,15 @@
      });
  });
 
- app.get('/api/beers', function(req,res){
-     console.log(req.query);
-     request("http://api.brewerydb.com/v2/search?key="+ secrets + "&withBreweries=y&withLocations=y&withAlternateNames=y&withIngredients=y&type=beer" + req.query.q, function(err, response, body) {
-         res.send(body); // send the body (beer data) to the client
-     });
- });
+//  app.get('/api/beers', function(req,res){
+//      console.log(req.query);
+//      request("http://api.brewerydb.com/v2/search?key="+ secrets + "&withBreweries=y&withLocations=y&withAlternateNames=y&withIngredients=y&type=beer" + req.query.q, function(err, response, body) {
+//          res.send(body); // send the body (beer data) to the client
+//      });
+//  });
  app.get('/api/brewery/:breweryId/beers', function(req,res){
      console.log(req.query);
-     request("http://api.brewerydb.com/v2/brewery/" + req.params.breweryId + "/beers?key=" + secrets + "&withBreweries=y&withIngredients=y", function(err, response, body) {
+     request("http://api.brewerydb.com/v2/brewery/" + req.params.breweryId + "/beers?key=" + secrets + "&withBreweries=y", function(err, response, body) {
          res.send(body); // send the body (beer data) to the client
      });
  });

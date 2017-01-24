@@ -1,10 +1,12 @@
+ <link rel="stylesheet" type="text/css" href="/css/beerPanel.css">
   <div class="container-fluid" id="beerPanel" ng-model="beer.beerData">
     <div class="panel panel-default" class="button">
 		
 
        	<div class="panel-heading">
           {{ beer.beerData.name }} 
-          <button type="button" class="btn btn-success btn-circle glyphicon glyphicon-plus"></button></div>
+          <!--<button type="button" class="btn btn-success btn-circle glyphicon glyphicon-plus"></button>-->
+        </div>
         
 
         <div class="panel-body" ng-click="beerDesc= !beerDesc">
@@ -16,7 +18,7 @@
         </div>
 
         <div class="panel-footer">
-        {{ beer.beerData.breweries[0].name }}   abv: {{beer.beerData.abv}}%</div>
+        {{ beer.beerData.breweries[0].name }}     abv: {{beer.beerData.abv}}%</div>
       
       </div>
   </div>
