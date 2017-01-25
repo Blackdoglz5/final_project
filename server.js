@@ -27,17 +27,17 @@
  
  
  //****************** Client Sessions ****************
- var sessions = require('client-sessions')({
-    cookieName: config.name,
-    secret: COOKIE_SECRETS,
-    requestKey: 'session',
-    duration: (86400 * 1000) * 7,
-    cookie: {
-            ephemeral: false,
-            httpOnly: true,
-            secure: false
-     }
- });
+//  var sessions = require('client-sessions')({
+//     cookieName: config.name,
+//     secret: COOKIE_SECRETS,
+//     requestKey: 'session',
+//     duration: (86400 * 1000) * 7,
+//     cookie: {
+//             ephemeral: false,
+//             httpOnly: true,
+//             secure: false
+//      }
+//  });
  
  
  //****************** Middleware ******************
