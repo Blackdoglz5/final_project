@@ -13,7 +13,7 @@
  
  const API_KEY = process.env.API_KEY;
  const PORT = process.env.PORT || 3000;
- 
+ const COOKIE_SECRETS = process.env.COOKIE_SECRETS;
  
  //****************** Connect to database **********************
  mongoose.connect('mongodb://localhost/finalproj', (error)=>{
@@ -29,7 +29,7 @@
  //****************** Client Sessions ****************
  var sessions = require('client-sessions')({
     cookieName: config.name,
-    secret: cookie_secrets,
+    secret: COOKIE_SECRETS,
     requestKey: 'session',
     duration: (86400 * 1000) * 7,
     cookie: {
