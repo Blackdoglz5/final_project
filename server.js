@@ -51,15 +51,15 @@
  app.use(express.static('public'));
  
  //***************session counter ********************
- app.use((req, res, next)=>{
-     if(req.session.uid){    
-         req.session.counter++;
-     } else {
-         req.session.counter = 0;
-     }  
-     console.log("Session counter: ", req.session.counter);
-     next();
- });
+//  app.use((req, res, next)=>{
+//      if(req.session.uid){    
+//          req.session.counter++;
+//      } else {
+//          req.session.counter = 0;
+//      }  
+//      console.log("Session counter: ", req.session.counter);
+//      next();
+//  });
  
  //****************** Routing ***********************
  
