@@ -44,7 +44,7 @@
  
  app.use(
     logger('dev'),
-    sessions,
+    // sessions,
     bodyParser.json(),
     bodyParser.urlencoded({ extended: true })
  );
