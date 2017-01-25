@@ -8,10 +8,13 @@
  const colors = require('colors');
  const app = express();
  
- 
+
+
+
  const API_KEY = process.env.API_KEY;
- const PORT = process.env.PORT || 3000;
  const COOKIE_SECRETS = process.env.COOKIE_SECRETS;
+ const PORT = process.env.PORT || 3000;
+
  
  //****************** Connect to database **********************
  mongoose.connect('mongodb://localhost/finalproj', (error)=>{
@@ -70,7 +73,7 @@
          res.send(body); // send the body (beer data) to the client
      });
  });
- 
+
  app.get('/api/brewery/:breweryId/beers', function(req,res){
      console.log(req.query);
      request("http://api.brewerydb.com/v2/brewery/" + req.params.breweryId + "/beers?key=" + API_KEY + "&withBreweries=y", function(err, response, body) {
@@ -85,21 +88,21 @@
  });
  //****************** Check Server Connection **************************
  app.listen(PORT, (error)=>{
-     if(error) {s
+     if(error) {
          console.log("Error starting server!");
      } else {
          console.log("Server started on port: ", PORT);
      }
  })
   app.listen(API_KEY, (error)=>{
-     if(error) {s
+     if(error) {
          console.log("Error finding API_KEY");
      } else {
          console.log("API_KEY FOUND!");
      }
  })
   app.listen(COOKIE_SECRETS, (error)=>{
-     if(error) {s
+     if(error) {
          console.log("Error finding COOKIE_SECRETS");
      } else {
          console.log("COOKIE_SECRETS FOUND!");

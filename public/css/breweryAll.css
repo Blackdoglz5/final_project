@@ -6,6 +6,7 @@ img {
     border-right:30px solid white;
     border-radius: 5%;
     box-shadow: 7px 8px 15px 0px #888888;
+    max-width: 100%;
 }
 
 h1 {

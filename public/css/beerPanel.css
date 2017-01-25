@@ -14,6 +14,7 @@ img {
   margin: auto;
   background-color: white;
   border-radius:5px; 
+  max-width: 100%;
   
 }
 div.panel-heading {
