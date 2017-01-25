@@ -6,8 +6,6 @@
  const Routes = require('./routes/routes.js');
  const request = require('request');
  const colors = require('colors');
-//  const secrets = require('./secrets');
-//  const cookie_secrets = require('./cookie_secrets');
  const app = express();
  
  
@@ -27,39 +25,39 @@
  
  
  //****************** Client Sessions ****************
-//  var sessions = require('client-sessions')({
-//     cookieName: config.name,
-//     secret: COOKIE_SECRETS,
-//     requestKey: 'session',
-//     duration: (86400 * 1000) * 7,
-//     cookie: {
-//             ephemeral: false,
-//             httpOnly: true,
-//             secure: false
-//      }
-//  });
+ var sessions = require('client-sessions')({
+    cookieName: config.name,
+    secret: COOKIE_SECRETS,
+    requestKey: 'session',
+    duration: (86400 * 1000) * 7,
+    cookie: {
+            ephemeral: false,
+            httpOnly: true,
+            secure: false
+     }
+ });
  
  
  //****************** Middleware ******************
  
  app.use(
     logger('dev'),
-    // sessions,
+    sessions,
     bodyParser.json(),
     bodyParser.urlencoded({ extended: true })
  );
  app.use(express.static('public'));
  
  //***************session counter ********************
-//  app.use((req, res, next)=>{
-//      if(req.session.uid){    
-//          req.session.counter++;
-//      } else {
-//          req.session.counter = 0;
-//      }  
-//      console.log("Session counter: ", req.session.counter);
-//      next();
-//  });
+ app.use((req, res, next)=>{
+     if(req.session.uid){    
+         req.session.counter++;
+     } else {
+         req.session.counter = 0;
+     }  
+     console.log("Session counter: ", req.session.counter);
+     next();
+ });
  
  //****************** Routing ***********************
  
@@ -97,5 +95,19 @@
          console.log("Error starting server!");
      } else {
          console.log("Server started on port: ", PORT);
+     }
+ })
+  app.listen(API_KEY, (error)=>{
+     if(error) {s
+         console.log("Error finding API_KEY");
+     } else {
+         console.log("API_KEY FOUND!");
+     }
+ })
+  app.listen(COOKIE_SECRETS, (error)=>{
+     if(error) {s
+         console.log("Error finding COOKIE_SECRETS");
+     } else {
+         console.log("COOKIE_SECRETS FOUND!");
      }
  })
