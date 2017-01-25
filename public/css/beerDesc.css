@@ -17,3 +17,6 @@ div#woodStain {
     background-color: rgba(180, 110, 34, 0.55); 
     border-radius: 10px;
 }
+ul {
+    padding-right:10px;
+}
