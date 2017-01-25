@@ -70,13 +70,7 @@
          res.send(body); // send the body (beer data) to the client
      });
  });
-
-//  app.get('/api/beers', function(req,res){
-//      console.log(req.query);
-//      request("http://api.brewerydb.com/v2/search?key="+ secrets + "&withBreweries=y&withLocations=y&withAlternateNames=y&withIngredients=y&type=beer" + req.query.q, function(err, response, body) {
-//          res.send(body); // send the body (beer data) to the client
-//      });
-//  });
+ 
  app.get('/api/brewery/:breweryId/beers', function(req,res){
      console.log(req.query);
      request("http://api.brewerydb.com/v2/brewery/" + req.params.breweryId + "/beers?key=" + API_KEY + "&withBreweries=y", function(err, response, body) {
